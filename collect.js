@@ -40,22 +40,22 @@ http.get(options, function (res) {
 
                     var soufang={};
                 soufang.name=$(this).find("div.name").text();
-                soufang.price=$(this).find("div.antherBox span.price_type").text();
+                soufang.price=$(this).find(".anther>div.antherBox span.price_type").text();
                 soufang.dept=$(this).find("li.s2:first").text();
                 soufang.type=$(this).find("div.dot6").text();
 
                 console.log('   json -', soufang);
-//                    var db=new Db('test',new Server('localhost',27017,{auto_reconnect:true}, {}));
-//                    db.open(function(){
-//                        console.log('db opened');
-//                        db.collection('my_users',function(err,collection){
-//                            if (err) callback(err);
-//                            collection.insert(soufang,{safe:true},function(err,docs){
-//                                console.log(docs[0]._id);
-//                                //res.redirect('showUsers');
-//                            });
-//                        });
-//                    });
+                    var db=new Db('test',new Server('localhost',27017,{auto_reconnect:true}, {}));
+                    db.open(function(){
+                        console.log('db opened');
+                        db.collection('soufang',function(err,collection){
+                            if (err) callback(err);
+                            collection.insert(soufang,{safe:true},function(err,docs){
+                                console.log(docs[0]._id);
+                                //res.redirect('showUsers');
+                            });
+                        });
+                    });
 
 
 
