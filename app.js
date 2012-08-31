@@ -36,19 +36,19 @@ http.createServer(app).listen(app.get('port'), function(){
 var Db = require('mongodb').Db;
 var Server = require('mongodb').Server;
 
-app.get('/showUsers',function(req,res){
-    var users=[];
+app.get('/showResult',function(req,res){
+
 
     var db=new Db('test',new Server('localhost',27017,{auto_reconnect:true}, {}));
     db.open(function(){
-        db.collection('my_users',function(err,collection){
+        db.collection('soufang',function(err,collection){
             if (err) callback(err);
             collection.find({}).toArray(function(err,docs){
                 if (err) callback(err);
+                console.log(docs);
 
-                res.render('index', { items:docs,title:'搜索结果' });
+                res.render('showResult', {items:docs, title:'搜索结果' });
             });
         });
     });
-    res.end();
 });

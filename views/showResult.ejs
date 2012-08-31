@@ -6,19 +6,19 @@
   </head>
   <body>
 <table>
-<th>
-<td>名称</td>
-<td>地址</td>
-<td>价格</td>
-<td>开发商</td>
-</th>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>价格</th>
+<th>开发商</th>
+</tr>
 <% for(var i=0; i<items.length; i++) {%>
 <tr>
 
    <td><%= items[i].name%></td>
-   <td><%= items[i].add%></td>
+   <td><%= items[i].type%></td>
    <td><%= items[i].price%></td>
-   <td><%= items[i].developer%></td>
+   <td><%= items[i].dep%></td>
    </tr>
 <% } %>
 </table>
