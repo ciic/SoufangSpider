@@ -116,7 +116,7 @@ http.get(options, function (res) {
 
 
 
-app.get('/showResult',function(req,res){
+app.get('/show',function(req,res){
 
 
     var db=new Db('test',new Server('localhost',27017,{auto_reconnect:true}, {}));
