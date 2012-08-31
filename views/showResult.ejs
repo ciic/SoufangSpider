@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+<table>
+<tr>
+<th>名称</th>
+<th>类型</th>
+<th>价格</th>
+<th>开发商</th>
+</tr>
+<% for(var i=0; i<items.length; i++) {%>
+<tr>
+
+   <td><%= items[i].name%></td>
+   <td><%= items[i].type%></td>
+   <td><%= items[i].price%></td>
+   <td><%= items[i].dept%></td>
+   </tr>
+<% } %>
+</table>
+  </body>
+</html>
